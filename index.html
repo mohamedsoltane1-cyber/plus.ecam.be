@@ -47,14 +47,15 @@ h1.pt{font-size:22px;font-weight:bold;margin-bottom:8px;color:#1a1a1a;}
 .stname{font-size:21px;font-weight:bold;margin-bottom:12px;}
 
 /* Year header - narrow, matches content width */
-.yh{background:#1ec2dd;color:#0d3d3d;font-weight:bold;text-align:center;padding:9px 12px;font-size:17px;margin:14px 0 0;width:fit-content;min-width:380px;display:table;}
+.yh{background:#1ec2dd;color:#0d3d3d;font-weight:bold;text-align:center;padding:9px 12px;font-size:17px;margin:14px 0 0;width:700px;max-width:100%;}
 
-/* Grades table - compact, columns hug content */
-table.gt{border-collapse:collapse;font-size:16px;width:auto;}
+/* Grades table - fixed-width columns matching real site */
+table.gt{border-collapse:collapse;font-size:16px;width:700px;max-width:100%;table-layout:fixed;}
 table.gt tr{border-bottom:1px solid #e5e5e5;}
-table.gt td{padding:6px 10px 6px 0;vertical-align:middle;white-space:nowrap;}
-table.gt td:first-child{padding-right:40px;white-space:normal;min-width:340px;}
-.hdr{font-weight:bold;color:#1a1a1a;}
+table.gt td{padding:6px 6px 6px 0;vertical-align:middle;}
+table.gt td:first-child{width:auto;white-space:normal;padding-right:10px;}
+table.gt td:nth-child(2),table.gt td:nth-child(3),table.gt td:nth-child(4){width:70px;white-space:nowrap;}
+.hdr{font-weight:bold;color:#1a1a1a;background:#f7f7f7;padding-top:8px;padding-bottom:6px;}
 .rue td:first-child{font-weight:bold;}
 .rsu td:first-child{font-weight:normal;}
 .grn{color:#1a7a1a;font-weight:bold;}
@@ -301,9 +302,9 @@ function ec(span,yk,ui,si,col){
 }
 
 function renderAll(){
-  renderYear('t-ecam',D.y26,IS_ADMIN,false,'y26');
+  renderYear('t-ecam',D.y26,IS_ADMIN,true,'y26');
   renderYear('t-h26',D.y26,IS_ADMIN,true,'y26');
-  renderYear('t-h25',D.y25,IS_ADMIN,false,'y25');
+  renderYear('t-h25',D.y25,IS_ADMIN,true,'y25');
 }
 
 async function loadData(){
